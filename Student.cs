@@ -22,10 +22,17 @@ namespace Breshna_Notes
             _genEdGrade = genEdGrade;
         }
 
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string LastName { get => _lastName; set => _lastName = value; }
+        public double CsiGrade { get => _csiGrade; set => _csiGrade = value; }
+        public double GenEdGrade { get => _genEdGrade; set => _genEdGrade = value; }
+
         public double Average()
         {
             return (_csiGrade + _genEdGrade) / 2.0;
         }
+
+
 
         public override string ToString()
         {

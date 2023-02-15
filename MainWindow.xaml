@@ -6,17 +6,18 @@
         xmlns:local="clr-namespace:Breshna_Notes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF338994">
-        <ListBox x:Name="lbStudents" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="44,44,506,43" Width="NaN" SelectionChanged="lbStudents_SelectionChanged"/>
+    <Grid x:Name="btnSelectStudent" Background="#FF338994">
+        <ListBox x:Name="lbStudents" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="47,16,503,71" Width="NaN" SelectionChanged="lbStudents_SelectionChanged"/>
         <Canvas Background="#FF85CFF5" Margin="349,44,113,100">
             <Label x:Name="lblFirstName" Content="Label" Canvas.Left="28" Canvas.Top="18" FontSize="20"/>
             <Label x:Name="lblLastName" Content="Label" Canvas.Left="196" Canvas.Top="18" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Content="CSI Grade" Canvas.Left="28" Canvas.Top="67" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label Content="Gen Ed Grade" Canvas.Left="28" Canvas.Top="140" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <TextBox x:Name="txtCSIGrade" Canvas.Left="28" TextWrapping="Wrap" Text="TextBox" Canvas.Top="101" Width="247" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtCSIGrade_Copy" Canvas.Left="28" TextWrapping="Wrap" Text="TextBox" Canvas.Top="174" Width="247" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtGenEd" Canvas.Left="28" TextWrapping="Wrap" Text="TextBox" Canvas.Top="174" Width="247" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="btnUpdateStudent" Content="Update Student" Canvas.Left="48" Canvas.Top="228" Height="45" Width="205" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnUpdateStudent_Click"/>
         </Canvas>
+        <Button Content="Select Student" HorizontalAlignment="Left" Margin="106,382,0,0" VerticalAlignment="Top" Width="132" Height="34"/>
 
     </Grid>
 </Window>

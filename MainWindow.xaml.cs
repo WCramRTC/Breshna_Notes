@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace Breshna_Notes
     public partial class MainWindow : Window
     {
         List<Student> studentList = new List<Student>();
+        Student selectedStudent = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -59,15 +61,37 @@ namespace Breshna_Notes
             }
 
         }
+
         // Button Click
         private void btnUpdateStudent_Click(object sender, RoutedEventArgs e)
         {
+
+            double csiGrade = double.Parse(txtCSIGrade.Text);
+            double genEdGrade = double.Parse(txtGenEd.Text);
+
+            selectedStudent.CsiGrade = csiGrade;
+            selectedStudent.GenEdGrade = genEdGrade;
+
+            DisplayToListBox();
 
         }
 
         // Selection Changed
         private void lbStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            int index = lbStudents.SelectedIndex;
+
+            if(index >= 0)
+            {
+                selectedStudent = studentList[index];
+
+                lblFirstName.Content = selectedStudent.FirstName;
+                lblLastName.Content = selectedStudent.LastName;
+                txtCSIGrade.Text = selectedStudent.CsiGrade.ToString();
+                txtGenEd.Text = selectedStudent.GenEdGrade.ToString();
+            }
+      
 
         }
 
