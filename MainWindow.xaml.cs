@@ -20,9 +20,58 @@ namespace Breshna_Notes
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Student> studentList = new List<Student>();
         public MainWindow()
         {
             InitializeComponent();
+            Preload();
+            DisplayToListBox();
         }
+
+        // New method to display to a list box
+        public void DisplayToListBox()
+        {
+            // Clear list box first
+            lbStudents.Items.Clear();
+
+            for (int i = 0; i < studentList.Count; i++)
+            {
+                lbStudents.Items.Add(studentList[i]);
+            }
+
+
+        }
+
+        void Preload()
+        {
+            Random rand = new Random();
+            for (int i = 0; i < 100; i++)
+            {
+                string firstName = "Breshna" + i;
+                string lastName = "Nein" + i;
+                int csiGrade = rand.Next(0, 101);
+                int genEd = rand.Next(0, 101);
+
+                Student breshna = new Student(firstName, lastName, csiGrade, genEd);
+
+                studentList.Add(breshna);
+
+            }
+
+        }
+        // Button Click
+        private void btnUpdateStudent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Selection Changed
+        private void lbStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+
     }
 }
